@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="406.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.encryption3.Client">
+   <children>
+      <TextField fx:id="txtEnterIpAddress" layoutX="55.0" layoutY="39.0" prefHeight="26.0" prefWidth="309.0" promptText="Enter IP Address" style="-fx-background-radius: 10px;" />
+      <JFXButton fx:id="btnConnect" layoutX="386.0" layoutY="39.0"  onAction="#btnConnectOnAction" style="-fx-background-radius: 10px; -fx-background-color: #80e773;" text="Connect" />
+      <TextArea fx:id="txtAreaServerResponse" editable="false" layoutX="54.0" layoutY="86.0" prefHeight="170.0" prefWidth="388.0" promptText="Server Response" />
+      <TextField fx:id="txtDecryptionKey" layoutX="56.0" layoutY="299.0" prefHeight="26.0" prefWidth="310.0" promptText="Enter Decryption Key" style="-fx-background-radius: 10px;" />
+      <JFXButton fx:id="btnSend" layoutX="386.0" layoutY="299.0" onAction="#btnSendOnAction" prefHeight="26.0" prefWidth="60.0" style="-fx-background-radius: 10px; -fx-background-color: #24a8ff;" text="Send" />
+   </children>
+</AnchorPane>
