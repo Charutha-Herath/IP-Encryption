@@ -6,6 +6,7 @@ import javafx.animation.Timeline;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.input.Clipboard;
@@ -37,8 +38,10 @@ public class Server extends Application {
     public Label lblPrivateKey;
     public JFXButton btnCopy;
 
+    private Stage stage;
     @Override
     public void start(Stage stage) throws IOException  {
+        this.stage = stage;
         FXMLLoader fxmlLoader = new FXMLLoader(Server.class.getResource("server-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Server");
@@ -55,6 +58,9 @@ public class Server extends Application {
         lblFixedLocalhost.setVisible(false);
         lblFixedEncryptedIp.setVisible(false);
         paneFixedPrivateKey.setVisible(false);
+
+
+        btnNoId.setOnAction(this::btnNoOnAction);
     }
 
     /*public void btnYesOnAction(ActionEvent actionEvent) throws Exception{
@@ -300,5 +306,11 @@ public class Server extends Application {
 
         );
         timeline.play();
+    }
+
+    public void btnNoOnAction(ActionEvent actionEvent) {
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.close();
+
     }
 }
